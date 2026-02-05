@@ -3,7 +3,9 @@ import Clubs from '../data/local/clubs.js';
 
 const home = () => {
   const searchFormElement = document.querySelector('#searchForm');
+
   const clubListContainerElement = document.querySelector('#clubListContainer');
+  const clubQueryWaitingElement = document.querySelector('.query-waiting');
   const clubLoadingElement = clubListContainerElement.querySelector('.search-loading');
   const clubListElement = clubListContainerElement.querySelector('.club-list');
   const listElement = clubListElement.querySelector('.list');
@@ -51,6 +53,14 @@ const home = () => {
     listElement.innerHTML = clubItems.join('');
   };
 
+  
+  const showClubList = () => {
+    Array.from(clubListContainerElement.children).forEach((element) => {
+      Utils.hideElement(element);
+    });
+    Utils.showElement(clubListElement);
+  };
+  
   const showLoading = () => {
     Array.from(clubListContainerElement.children).forEach((element) => {
       Utils.hideElement(element);
@@ -58,15 +68,15 @@ const home = () => {
     Utils.showElement(clubLoadingElement);
   };
 
-  const showClubList = () => {
+  const showQueryWaiting = () => {
     Array.from(clubListContainerElement.children).forEach((element) => {
       Utils.hideElement(element);
     });
-    Utils.showElement(clubListElement);
+    Utils.showElement(clubQueryWaitingElement);
   };
 
-  showSportClub();
   searchFormElement.addEventListener('submit', onSearchHandler);
+  showQueryWaiting();
 };
 
 export default home;
