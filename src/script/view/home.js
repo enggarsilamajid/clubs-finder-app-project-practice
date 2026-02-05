@@ -9,6 +9,9 @@ const home = () => {
   const listElement = clubListElement.querySelector('.list');
 
   const showSportClub = (query) => {
+    if (!query || !query.trim()) {
+      return;
+    }
     showLoading();
 
     const result = Clubs.searchClub(query);
