@@ -62,8 +62,8 @@ const home = () => {
     Utils.showElement(clubListElement);
   };
 
-  searchFormElement.addEventListener('submit', onSearchHandler);
   showSportClub();
+  searchFormElement.addEventListener('submit', onSearchHandler);
 };
 
 export default home;
