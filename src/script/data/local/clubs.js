@@ -58,7 +58,7 @@ class Clubs {
   static searchClub(query) {
     return clubs.filter((club) => {
       const loweredCaseClubName = (club.strTeam || '-').toLowerCase();
-      const jammedClubName = loweredCaseClubName.replace(/\s/g, '');
+      const jammedQuery = loweredCaseClubName.replace(/\s/g, '');
 
       return jammedClubName.indexOf(jammedQuery) !== -1;
     });
