@@ -75,7 +75,6 @@ const home = () => {
     Utils.showElement(clubQueryWaitingElement);
   };
 
-  showClubList();
   searchFormElement.addEventListener('submit', onSearchHandler);
   showQueryWaiting();
 };
